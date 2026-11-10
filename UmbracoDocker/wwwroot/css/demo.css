@@ -1,0 +1,121 @@
+:root {
+    --ink: #10221b;
+    --ink-soft: #4a5f57;
+    --line: #d9e3de;
+    --paper: #f6f8f7;
+    --accent: #1b6e4f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 16px/1.65 ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 8vw, 6rem) 1.5rem 4rem;
+}
+
+.eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.lede {
+    margin: 1.25rem 0 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    color: var(--ink-soft);
+    max-width: 34rem;
+}
+
+.prose {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.prose p { margin: 0 0 1.1rem; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { font-weight: 650; }
+
+.facts {
+    margin-top: 3rem;
+    padding: 1.75rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+
+.facts dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.facts dt {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.facts dd {
+    margin: 0.35rem 0 0;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.foot {
+    margin-top: 3rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+}
+
+.foot p { margin: 0; }
+
+.foot a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.foot a:hover,
+.foot a:focus-visible { text-decoration: underline; }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e8f0ec;
+        --ink-soft: #9fb3aa;
+        --line: #26332d;
+        --paper: #0d1411;
+        --accent: #5fd2a0;
+    }
+    .facts { background: #121b17; }
+}

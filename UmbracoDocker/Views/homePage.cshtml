@@ -1,0 +1,46 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+    var title = Model.Value<string>("title");
+    var subtitle = Model.Value<string>("subtitle");
+    var bodyText = Model.Value("bodyText");
+    var footerNote = Model.Value<string>("footerNote");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title</title>
+    <link rel="stylesheet" href="/css/demo.css" />
+</head>
+<body>
+    <main class="page">
+        <header class="hero">
+            <p class="eyebrow">@Model.ContentType.Alias &middot; @Model.Name</p>
+            <h1>@title</h1>
+            @if (string.IsNullOrWhiteSpace(subtitle) == false)
+            {
+                <p class="lede">@subtitle</p>
+            }
+        </header>
+
+        <section class="prose">
+            @bodyText
+        </section>
+
+        <section class="facts">
+            <dl>
+                <div><dt>Document type</dt><dd>@Model.ContentType.Alias</dd></div>
+                <div><dt>Published</dt><dd>@Model.UpdateDate.ToString("yyyy-MM-dd HH:mm")</dd></div>
+                <div><dt>Node id</dt><dd>@Model.Id</dd></div>
+            </dl>
+        </section>
+
+        <footer class="foot">
+            <p>@footerNote</p>
+            <p><a href="/umbraco">Open the backoffice &rarr;</a></p>
+        </footer>
+    </main>
+</body>
+</html>

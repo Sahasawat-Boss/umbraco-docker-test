@@ -1,0 +1,14 @@
+# Secrets and generated certificates - never commit these.
+.env
+certs/
+
+# Holds the unattended-install admin password in plain text - keep it local.
+UmbracoDocker/appsettings.Development.json
+
+# Leftover from the SQL Server flavour of the compose template.
+Database/
+
+# Local database copies taken while debugging.
+*.sqlite.db
+*.sqlite.db-shm
+*.sqlite.db-wal
